@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
+import "../styles/globals.css"
 import "../styles/holiday.css"
 
 function MyApp({ Component, pageProps }: AppProps) {

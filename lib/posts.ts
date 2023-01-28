@@ -1,49 +1,61 @@
-import fs, { promises } from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { format } from 'date-fns';
-import markdownToHtml from './markdownToHtml';
+import fs, { promises } from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { format } from "date-fns";
+import markdownToHtml from "./markdownToHtml";
 
 export const posts = async () => {
-    const postsDirectory = path.join(process.cwd(), 'posts');
-    const fileNames = await promises.readdir(postsDirectory);
-    return fileNames
-        .filter(fileName => {
-            return fileName !== ".git"
-        })
-        .map(fileName => {
-            const fileContents = fs.readFileSync(path.join(process.cwd(), 'posts', fileName), 'utf-8');
-            const { data } = matter(fileContents);
+  const postsDirectory = path.join(process.cwd(), "posts");
+  const fileNames = await promises.readdir(postsDirectory);
+  return fileNames
+    .filter((fileName) => {
+      return fileName !== ".git";
+    })
+    .map((fileName) => {
+      const fileContents = fs.readFileSync(
+        path.join(process.cwd(), "posts", fileName),
+        "utf-8"
+      );
+      const { data } = matter(fileContents);
 
-            const matched: RegExpMatchArray | null = fileName.match(/^([0-9]{4}-[0-9]{2}-[0-9]{2})[_-](.+)$/);
+      const matched: RegExpMatchArray | null = fileName.match(
+        /^([0-9]{4}-[0-9]{2}-[0-9]{2})[_-](.+)$/
+      );
 
-            const dateString = matched ? matched[1] : "";
-            const file = matched ? matched[2] : "";
-            const slug = path.basename(file, path.extname(file));
+      const dateString = matched ? matched[1] : "";
+      const file = matched ? matched[2] : "";
+      const slug = path.basename(file, path.extname(file));
 
-            return {
-                id: path.basename(fileName, path.extname(fileName)),
-                title: data.title ?? slug,
-                publishedAt: data.date ? format(data.date, 'yyyy-MM-dd') : dateString,
-            };
-        }).sort((a, b) => {
-            if (a.publishedAt > b.publishedAt) {
-                return -1
-            }
-            return a.publishedAt <= b.publishedAt ? 1 : -1;
-        });
-}
+      return {
+        id: path.basename(fileName, path.extname(fileName)),
+        title: data.title ?? slug,
+        publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
+      };
+    })
+    .sort((a, b) => {
+      if (a.publishedAt > b.publishedAt) {
+        return -1;
+      }
+      return a.publishedAt <= b.publishedAt ? 1 : -1;
+    });
+};
 
-export const post = async (fileName: string) => {
-    const postPath = path.join(process.cwd(), 'posts', fileName);
-    const fileContents = fs.readFileSync(postPath, 'utf-8');
-    const { data, content } = matter(fileContents);
+export const post = async (urlPath: string) => {
+  const postPath = path.join(process.cwd(), "posts", urlPath + ".md");
+  const fileContents = fs.readFileSync(postPath, "utf-8");
+  const { data, content } = matter(fileContents);
 
-    const dateString = fileName.split('_')[0];
+  const matched: RegExpMatchArray | null = urlPath.match(
+    /^([0-9]{4}-[0-9]{2}-[0-9]{2})[_-](.+)$/
+  );
+  const dateString = matched ? matched[1] : "";
 
-    return {
-        title: data.title,
-        publishedAt: data.date ? format(data.date, 'yyyy-MM-dd') : dateString,
-        body: await markdownToHtml(content)
-    };
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+
+  return {
+    title: data.title,
+    publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
+    body: await markdownToHtml(content),
+    path: path.join(siteUrl, urlPath),
+  };
 };
