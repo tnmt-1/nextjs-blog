@@ -1,11 +1,11 @@
-import Head from "next/head";
-import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
+import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/holiday.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const siteUrl = process.env.SITE_URL ?? "";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
   return (
     <>

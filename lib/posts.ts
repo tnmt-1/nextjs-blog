@@ -1,7 +1,7 @@
-import fs, { promises } from "fs";
-import path from "path";
-import matter from "gray-matter";
 import { format } from "date-fns";
+import fs, { promises } from "fs";
+import matter from "gray-matter";
+import path from "path";
 import markdownToHtml from "./markdownToHtml";
 
 export const posts = async () => {
@@ -50,7 +50,7 @@ export const post = async (urlPath: string) => {
   );
   const dateString = matched ? matched[1] : "";
 
-  const siteUrl = process.env.SITE_URL ?? "";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
   return {
     title: data.title,
