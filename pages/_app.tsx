@@ -1,10 +1,12 @@
-import Head from 'next/head'
-import { AppProps } from 'next/app'
-import { DefaultSeo } from 'next-seo'
-import "../styles/globals.css"
-import "../styles/holiday.css"
+import Head from "next/head";
+import { AppProps } from "next/app";
+import { DefaultSeo } from "next-seo";
+import "../styles/globals.css";
+import "../styles/holiday.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const siteUrl = process.env.SITE_URL ?? "";
+
   return (
     <>
       <Head>
@@ -14,24 +16,24 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo
         defaultTitle="mahlog"
-        canonical="https://blog-mt2m10.vercel.app/"
+        canonical={siteUrl}
         description="日々の出来事やプログラミング関連について書きます。"
         twitter={{
           handle: "mahlog",
           site: "mahlog",
-          cardType: 'summary',
+          cardType: "summary",
         }}
         openGraph={{
           type: "website",
           title: "mahlog",
           description: "日々の出来事やプログラミング関連について書きます。",
           site_name: "mahlog",
-          url: "https://blog-mt2m10.vercel.app/",
+          url: siteUrl,
         }}
       />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

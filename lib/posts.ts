@@ -50,12 +50,12 @@ export const post = async (urlPath: string) => {
   );
   const dateString = matched ? matched[1] : "";
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+  const siteUrl = process.env.SITE_URL ?? "";
 
   return {
     title: data.title,
     publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
     body: await markdownToHtml(content),
-    path: path.join(siteUrl, urlPath),
+    path: `${siteUrl}/${urlPath}`,
   };
 };
