@@ -1,3 +1,14 @@
 html {
   font-size: 1.2rem;
 }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, "Noto Sans JP", Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", system-ui;
+}
+
+pre,
+code {
+  font-family: "PlemolJP", Hackgen, Consolas, Monaco, "Andale Mono",
+    "Ubuntu Mono", monospace !important;
+}

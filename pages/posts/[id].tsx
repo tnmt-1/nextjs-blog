@@ -11,7 +11,7 @@ const BlogId: NextPage<Props> = ({ blog }) => {
 
   return (
     <main>
-      <NextSeo title={`${blog.title}`} description={description} />
+      <NextSeo title={`${blog.title} | ${process.env.NEXT_PUBLIC_SITE_TITLE}`} description={description} />
       <h1>{blog.title}</h1>
       <small>
         <time>{blog.publishedAt}</time>
