@@ -3,6 +3,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import striptags from "striptags";
 import { post, posts } from "../../lib/posts";
+import styles from "./[id].module.css";
+
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const BlogId: NextPage<Props> = ({ blog }) => {
@@ -34,7 +36,9 @@ const BlogId: NextPage<Props> = ({ blog }) => {
           })}
         </div>
       )}
-      <ShareButtons url={blog.path} title={blog.title} />
+      <div className={styles.share}>
+        <ShareButtons url={blog.path} title={blog.title} />
+      </div>
     </main>
   );
 };
