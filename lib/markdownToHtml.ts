@@ -1,8 +1,10 @@
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeStringify from "rehype-stringify";
 import { remark } from "remark";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
-import html from "remark-html";
-import prism from "remark-prism";
+import remarkPrism from "remark-prism";
+import remarkRehype from "remark-rehype";
 
 /**
  * remarkによるmarkdownの構文変換を行う
@@ -12,9 +14,14 @@ import prism from "remark-prism";
 const markdownToHtml = async (markdown: string) => {
   const result = await remark()
     .use(remarkGfm)
-    .use(html, { sanitize: false })
     .use(remarkBreaks)
-    .use(prism)
+    .use(remarkPrism)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeExternalLinks, {
+      target: "_blank",
+      rel: ["noopener noreferrer"],
+    })
+    .use(rehypeStringify)
     .process(markdown);
   return result.toString();
 };

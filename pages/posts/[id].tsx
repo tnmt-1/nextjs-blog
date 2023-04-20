@@ -1,7 +1,6 @@
 import { ShareButtons } from "@/components/ShareButtons/ShareButtons";
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Script from "next/script";
 import striptags from "striptags";
 import { post, posts } from "../../lib/posts";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -36,7 +35,6 @@ const BlogId: NextPage<Props> = ({ blog }) => {
         </div>
       )}
       <ShareButtons url={blog.path} title={blog.title} />
-      <Script src="/js/index.js"></Script>
     </main>
   );
 };
