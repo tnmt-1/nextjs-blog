@@ -36,6 +36,7 @@ const BlogId: NextPage<Props> = ({ blog }) => {
         </div>
       )}
       <ShareButtons url={blog.path} title={blog.title} />
+      <script src="/js/index.js"></script>
     </main>
   );
 };

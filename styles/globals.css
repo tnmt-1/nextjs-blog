@@ -30,3 +30,11 @@ code,
   padding: 0.2rem 0.5rem;
   border-radius: var(--border-radius);
 }
+
+a[target="_blank"]::after {
+  font-family: "Font Awesome 5 Free";
+  content: " \f35d";
+  font-weight: 900;
+  display: inline-block;
+  margin: 0 5px;
+}

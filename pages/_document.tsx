@@ -4,7 +4,12 @@ import Link from "next/link";
 export default function Document() {
   return (
     <Html lang="ja" className="holiday-css-dark">
-      <Head />
+      <Head>
+        {/* <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.11.0/css/all.css"
+        ></link> */}
+      </Head>
       <body>
         <header>
           <nav>
