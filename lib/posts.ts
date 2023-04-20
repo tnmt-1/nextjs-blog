@@ -19,24 +19,43 @@ export const posts = async () => {
       const { data } = matter(fileContents);
 
       const matched: RegExpMatchArray | null = fileName.match(
-        /^([0-9]{4}-[0-9]{2}-[0-9]{2})[_-](.+)$/
+        /^(([0-9]{4})([0-9]{2})([0-9]{2}))([0-9]{2})([0-9]{2})([0-9]{2}).+$/
       );
 
-      const dateString = matched ? matched[1] : "";
-      const file = matched ? matched[2] : "";
+      const getPublishedAt = () => {
+        if (!matched) return "";
+        if (data.date) return format(data.date, "yyyy-MM-dd");
+        return format(
+          new Date(`${matched[2]}-${matched[3]}-${matched[4]}`),
+          "yyyy-MM-dd"
+        );
+      };
+
+      const getTimestamp = () => {
+        if (!matched) return 0;
+        if (data.date) return Number(data.date);
+        return Number(
+          new Date(
+            `${matched[2]}-${matched[3]}-${matched[4]} ${matched[5]}:${matched[6]}:${matched[7]}`
+          )
+        );
+      };
+
+      const file = matched ? matched[1] : "";
       const slug = path.basename(file, path.extname(file));
 
       return {
         id: path.basename(fileName, path.extname(fileName)),
         title: data.title ?? slug,
-        publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
+        publishedAt: getPublishedAt(),
+        timestamp: getTimestamp(),
       };
     })
     .sort((a, b) => {
-      if (a.publishedAt > b.publishedAt) {
+      if (a.timestamp > b.timestamp) {
         return -1;
       }
-      return a.publishedAt <= b.publishedAt ? 1 : -1;
+      return a.timestamp <= b.timestamp ? 1 : -1;
     });
 };
 
@@ -47,15 +66,23 @@ export const post = async (urlPath: string) => {
   const { data, content } = matter(fileContents);
 
   const matched: RegExpMatchArray | null = urlPath.match(
-    /^([0-9]{4}-[0-9]{2}-[0-9]{2})[_-](.+)$/
+    /^(([0-9]{4})([0-9]{2})([0-9]{2})).+$/
   );
-  const dateString = matched ? matched[1] : "";
+
+  const getPublishedAt = () => {
+    if (!matched) return "";
+    if (data.date) return format(data.date, "yyyy-MM-dd");
+    return format(
+      new Date(`${matched[2]}-${matched[3]}-${matched[4]}`),
+      "yyyy-MM-dd"
+    );
+  };
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
   return {
     title: data.title,
-    publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
+    publishedAt: getPublishedAt(),
     body: await markdownToHtml(content),
     path: `${siteUrl}/${basePostPath}`,
     tags: data.tags ?? null,
