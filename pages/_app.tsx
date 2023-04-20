@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/holiday.css";
+import "../styles/prism.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +11,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{process.env.NEXT_PUBLIC_SITE_TITLE}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link href="/css/prism.css" rel="stylesheet" />
       </Head>
       <DefaultSeo
         defaultTitle="mahlog"

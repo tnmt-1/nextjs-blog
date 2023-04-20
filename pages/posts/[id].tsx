@@ -27,7 +27,11 @@ const BlogId: NextPage<Props> = ({ blog }) => {
       {blog.tags && (
         <div className="tags">
           {blog.tags.map((tag: string) => {
-            return <span className="tag">{tag}</span>;
+            return (
+              <span key={tag} className="tag">
+                {tag}
+              </span>
+            );
           })}
         </div>
       )}
