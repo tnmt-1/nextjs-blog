@@ -1,3 +1,7 @@
-.share > button {
+.share {
+  text-align: center;
+}
+
+.share > button:not(:last-child) {
   margin-right: 10px;
 }

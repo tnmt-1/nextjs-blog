@@ -41,8 +41,9 @@ export const posts = async () => {
 };
 
 export const post = async (urlPath: string) => {
-  const postPath = path.join(process.cwd(), "posts", urlPath + ".md");
-  const fileContents = fs.readFileSync(postPath, "utf-8");
+  const basePostPath = path.join("posts", urlPath);
+  const realPostPath = path.join(process.cwd(), `${basePostPath}.md`);
+  const fileContents = fs.readFileSync(realPostPath, "utf-8");
   const { data, content } = matter(fileContents);
 
   const matched: RegExpMatchArray | null = urlPath.match(
@@ -56,6 +57,7 @@ export const post = async (urlPath: string) => {
     title: data.title,
     publishedAt: data.date ? format(data.date, "yyyy-MM-dd") : dateString,
     body: await markdownToHtml(content),
-    path: `${siteUrl}/${urlPath}`,
+    path: `${siteUrl}/${basePostPath}`,
+    tags: data.tags ?? null,
   };
 };

@@ -11,7 +11,10 @@ const BlogId: NextPage<Props> = ({ blog }) => {
 
   return (
     <main>
-      <NextSeo title={`${blog.title} | ${process.env.NEXT_PUBLIC_SITE_TITLE}`} description={description} />
+      <NextSeo
+        title={`${blog.title} | ${process.env.NEXT_PUBLIC_SITE_TITLE}`}
+        description={description}
+      />
       <h1>{blog.title}</h1>
       <small>
         <time>{blog.publishedAt}</time>
@@ -21,6 +24,13 @@ const BlogId: NextPage<Props> = ({ blog }) => {
           __html: `${blog.body}`,
         }}
       />
+      {blog.tags && (
+        <div className="tags">
+          {blog.tags.map((tag: string) => {
+            return <span className="tag">{tag}</span>;
+          })}
+        </div>
+      )}
       <ShareButtons url={blog.path} title={blog.title} />
     </main>
   );
