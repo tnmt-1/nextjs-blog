@@ -38,3 +38,12 @@ a[target="_blank"]::after {
   display: inline-block;
   margin: 0 5px;
 }
+
+.logo + span {
+  margin-left: 10px;
+}
+
+header > .title a {
+  display: flex;
+  align-items: flex-end;
+}
