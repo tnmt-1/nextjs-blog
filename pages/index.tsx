@@ -6,6 +6,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ blog }) => {
   const listBlockStyle = {
+    display: "block",
     marginBottom: "20px",
   };
   const mainStyle = {
@@ -15,14 +16,12 @@ const Home: NextPage<Props> = ({ blog }) => {
   return (
     <main className="container" style={mainStyle}>
       {blog.map((blog) => (
-        <div key={blog.id} style={listBlockStyle}>
+        <Link href={`/posts/${blog.id}`} key={blog.id} style={listBlockStyle}>
           <small>
             <time>{blog.publishedAt}</time>
           </small>
-          <div>
-            <Link href={`/posts/${blog.id}`}>{blog.title}</Link>
-          </div>
-        </div>
+          <div>{blog.title}</div>
+        </Link>
       ))}
     </main>
   );
