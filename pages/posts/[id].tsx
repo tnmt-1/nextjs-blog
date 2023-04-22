@@ -2,12 +2,15 @@ import { ShareButtons } from "@/components/ShareButtons/ShareButtons";
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import striptags from "striptags";
+import { useTweetEmbed } from "../../components/Twitter/Twitter";
 import { post, posts } from "../../lib/posts";
 import styles from "./[id].module.css";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const BlogId: NextPage<Props> = ({ blog }) => {
+  useTweetEmbed();
+
   const description = striptags(blog.body).split("。")[0];
 
   return (

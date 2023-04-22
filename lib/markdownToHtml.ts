@@ -1,3 +1,6 @@
+import remarkEmbedder from "@remark-embedder/core";
+import type { Config } from "@remark-embedder/transformer-oembed";
+import oembedTransformer from "@remark-embedder/transformer-oembed";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
@@ -39,6 +42,21 @@ export const markdownToHtmlWithToc = async (markdown: string) => {
     .use(remarkGfm)
     .use(remarkBreaks)
     .use(remarkPrism)
+    .use(remarkEmbedder, {
+      transformers: [
+        [
+          oembedTransformer,
+          {
+            params: {
+              maxwidth: 550,
+              omit_script: true,
+              lang: "ja",
+              dnt: true,
+            },
+          } as Config,
+        ],
+      ],
+    })
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeExternalLinks, {
       target: "_blank",

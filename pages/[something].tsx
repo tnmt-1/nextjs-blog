@@ -2,11 +2,13 @@ import fs, { promises } from "fs";
 import matter from "gray-matter";
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import path from "path";
+import { useTweetEmbed } from "../components/Twitter/Twitter";
 import { markdownToHtml } from "../lib/markdownToHtml";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ content }) => {
+  useTweetEmbed();
   return (
     <article
       dangerouslySetInnerHTML={{
