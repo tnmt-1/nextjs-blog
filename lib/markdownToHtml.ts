@@ -7,6 +7,7 @@ import rehypeStringify from "rehype-stringify";
 import rehypeToc, { HtmlElementNode, TextNode } from "rehype-toc";
 import { remark } from "remark";
 import remarkBreaks from "remark-breaks";
+import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkGfm from "remark-gfm";
 import remarkPrism from "remark-prism";
 import remarkRehype from "remark-rehype";
@@ -20,6 +21,7 @@ export const markdownToHtml = async (markdown: string) => {
   const result = await remark()
     .use(remarkGfm)
     .use(remarkBreaks)
+    .use(remarkCodeTitles)
     .use(remarkPrism)
     .use(remarkEmbedder, {
       transformers: [
@@ -56,6 +58,7 @@ export const markdownToHtmlWithToc = async (markdown: string) => {
   const result = await remark()
     .use(remarkGfm)
     .use(remarkBreaks)
+    .use(remarkCodeTitles)
     .use(remarkPrism)
     .use(remarkEmbedder, {
       transformers: [

@@ -48,3 +48,11 @@ h3:not(:first-child) {
 .toc-wapper {
   margin: 30px 0 50px 0;
 }
+
+.remark-code-title {
+  font-size: 0.9rem;
+  background-color: #2d2d2d;
+  padding: 1em;
+  margin-bottom: -1em;
+  border-bottom: 1px solid var(--dark-border-hover-color);
+}
