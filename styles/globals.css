@@ -47,3 +47,11 @@ header > .title a {
   display: flex;
   align-items: flex-end;
 }
+
+footer > nav {
+  border-bottom: none;
+}
+
+footer > .copyright {
+  margin: 30px 0;
+}

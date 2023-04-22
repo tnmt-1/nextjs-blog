@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Document() {
   return (
@@ -22,7 +22,18 @@ export default function Document() {
           </h2>
         </header>
         <Main />
-        <footer>Copyright © {new Date().getFullYear()} mahlog</footer>
+        <footer>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/プライバシーポリシー">プライバシーポリシー</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="copyright">
+            Copyright © {new Date().getFullYear()} mahlog
+          </div>
+        </footer>
         <NextScript />
       </body>
     </Html>
