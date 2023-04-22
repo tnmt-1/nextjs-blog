@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import fs, { promises } from "fs";
 import matter from "gray-matter";
 import path from "path";
-import markdownToHtml from "./markdownToHtml";
+import { markdownToHtmlWithToc } from "./markdownToHtml";
 
 export const posts = async () => {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -83,7 +83,7 @@ export const post = async (urlPath: string) => {
   return {
     title: data.title,
     publishedAt: getPublishedAt(),
-    body: await markdownToHtml(content),
+    body: await markdownToHtmlWithToc(content),
     path: `${siteUrl}/${basePostPath}`,
     tags: data.tags ?? null,
   };

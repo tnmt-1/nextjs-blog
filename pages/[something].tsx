@@ -2,7 +2,7 @@ import fs, { promises } from "fs";
 import matter from "gray-matter";
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import path from "path";
-import markdownToHtml from "../lib/markdownToHtml";
+import { markdownToHtml } from "../lib/markdownToHtml";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
