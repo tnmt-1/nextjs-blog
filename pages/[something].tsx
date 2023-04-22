@@ -8,13 +8,11 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ content }) => {
   return (
-    <main className="container">
-      <article
-        dangerouslySetInnerHTML={{
-          __html: `${content}`,
-        }}
-      />
-    </main>
+    <article
+      dangerouslySetInnerHTML={{
+        __html: `${content}`,
+      }}
+    />
   );
 };
 

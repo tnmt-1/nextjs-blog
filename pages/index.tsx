@@ -9,12 +9,9 @@ const Home: NextPage<Props> = ({ blog }) => {
     display: "block",
     marginBottom: "20px",
   };
-  const mainStyle = {
-    paddingTop: "15px",
-  };
 
   return (
-    <main className="container" style={mainStyle}>
+    <>
       {blog.map((blog) => (
         <Link href={`/posts/${blog.id}`} key={blog.id} style={listBlockStyle}>
           <small>
@@ -23,7 +20,7 @@ const Home: NextPage<Props> = ({ blog }) => {
           <div>{blog.title}</div>
         </Link>
       ))}
-    </main>
+    </>
   );
 };
 

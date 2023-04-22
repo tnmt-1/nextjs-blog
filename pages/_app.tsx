@@ -30,7 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           url: process.env.NEXT_PUBLIC_SITE_URL,
         }}
       />
-      <Component {...pageProps} />
+      <main className="container">
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }
