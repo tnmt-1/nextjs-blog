@@ -1,7 +1,7 @@
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
-import rehypeToc, { HeadingNode, HtmlElementNode, TextNode } from "rehype-toc";
+import rehypeToc, { HtmlElementNode, TextNode } from "rehype-toc";
 import { remark } from "remark";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
@@ -49,23 +49,23 @@ export const markdownToHtmlWithToc = async (markdown: string) => {
       nav: false,
       headings: ["h1", "h2", "h3"],
       customizeTOC: function (toc) {
-        const tocText: TextNode = {
+        const summaryText: TextNode = {
           type: "text",
           value: "目次",
         };
 
-        const tocHeading: HeadingNode = {
+        const summary: HtmlElementNode = {
           type: "element",
-          tagName: "h2",
+          tagName: "summary",
           properties: {},
-          children: [tocText],
+          children: [summaryText],
         };
 
         const tocWrapper: HtmlElementNode = {
           type: "element",
-          tagName: "div",
+          tagName: "details",
           properties: { className: "toc-wapper" },
-          children: [tocHeading, toc],
+          children: [summary, toc],
         };
 
         return replaceFromOltoUl(tocWrapper);

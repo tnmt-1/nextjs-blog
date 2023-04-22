@@ -64,9 +64,5 @@ h3:not(:first-child) {
 }
 
 .toc-wapper {
-  border: 1px solid var(--dark-border-color);
-  padding: 0 30px;
   margin: 30px 0 50px 0;
-  border-radius: 5px;
-  background-color: var(--dark-code-background-color);
 }
