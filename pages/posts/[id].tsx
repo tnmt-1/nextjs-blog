@@ -29,10 +29,10 @@ const BlogId: NextPage<Props> = ({ blog }) => {
         }}
       />
       {blog.tags && (
-        <div className="tags">
+        <div className={styles.tags}>
           {blog.tags.map((tag: string) => {
             return (
-              <span key={tag} className={styles.tags}>
+              <span key={tag} className={styles.tag}>
                 {tag}
               </span>
             );
