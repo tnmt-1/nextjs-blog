@@ -2,9 +2,9 @@ import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../fontawesome/css/all.min.css";
+import "../styles/globals.css";
 import "../styles/holiday.css";
 import "../styles/prism.css";
-import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,6 +12,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{process.env.NEXT_PUBLIC_SITE_TITLE}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="google-site-verification"
+          content="nfun4SJX5ghRk03WesHDmjQb9DiZNxtEcy-Oy1_mzh8"
+        />
       </Head>
       <DefaultSeo
         defaultTitle="mahlog"
