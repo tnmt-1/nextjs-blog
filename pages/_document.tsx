@@ -26,13 +26,15 @@ export default function Document() {
           <nav>
             <ul>
               <li>
-                <Link href="/このサイトについて">このサイトについて</Link>
+                <Link href="/site/このサイトについて">このサイトについて</Link>
               </li>
               <li>
-                <Link href="/プライバシーポリシー">プライバシーポリシー</Link>
+                <Link href="/site/プライバシーポリシー">
+                  プライバシーポリシー
+                </Link>
               </li>
               <li>
-                <Link href="/個人情報">個人情報</Link>
+                <Link href="/site/個人情報">個人情報</Link>
               </li>
             </ul>
           </nav>
