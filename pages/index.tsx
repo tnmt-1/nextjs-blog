@@ -5,22 +5,22 @@ import { posts } from "../lib/posts";
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ blog }) => {
-  const listBlockStyle = {
-    display: "block",
-    marginBottom: "20px",
-  };
-
   return (
-    <>
+    <section className="blogs">
       {blog.map((blog) => (
-        <Link href={`/posts/${blog.id}`} key={blog.id} style={listBlockStyle}>
-          <small>
-            <time>{blog.publishedAt}</time>
-          </small>
-          <div>{blog.title}</div>
+        <Link href={`/posts/${blog.id}`} key={blog.id} className="row">
+          <div className="icon">
+            <span>{blog.emoji || "🧀"}</span>
+          </div>
+          <div className="row-body">
+            <small>
+              <time>{blog.publishedAt}</time>
+            </small>
+            <span className="line_wrap">{blog.title}</span>
+          </div>
         </Link>
       ))}
-    </>
+    </section>
   );
 };
 
