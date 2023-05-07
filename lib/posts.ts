@@ -49,7 +49,6 @@ export const posts = async () => {
         title: data.title ?? slug,
         publishedAt: getPublishedAt(),
         timestamp: getTimestamp(),
-        emoji: data.emoji || null,
       };
     })
     .sort((a, b) => {
@@ -87,6 +86,5 @@ export const post = async (urlPath: string) => {
     body: await markdownToHtmlWithToc(content),
     path: `${siteUrl}/${basePostPath}`,
     tags: data.tags ?? null,
-    emoji: data.emoji || null,
   };
 };

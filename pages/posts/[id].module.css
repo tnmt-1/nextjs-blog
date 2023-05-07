@@ -21,12 +21,3 @@
   padding: 0.3rem 0.5rem;
   border-radius: var(--border-radius);
 }
-
-.title {
-  display: flex;
-  align-items: center;
-}
-
-.title > span {
-  flex: 1;
-}

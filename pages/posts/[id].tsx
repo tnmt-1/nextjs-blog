@@ -19,12 +19,7 @@ const BlogId: NextPage<Props> = ({ blog }) => {
         title={`${blog.title} | ${process.env.NEXT_PUBLIC_SITE_TITLE}`}
         description={description}
       />
-      <h1 className={styles.title}>
-        <div className="icon">
-          <span>{blog.emoji || "🧀"}</span>
-        </div>
-        <span>{blog.title}</span>
-      </h1>
+      <h1>{blog.title}</h1>
       <small>
         <time>{blog.publishedAt}</time>
       </small>

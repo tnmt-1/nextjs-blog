@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Document() {
   return (
-    <Html lang="ja" className="holiday-css-light">
+    <Html lang="ja" className="holiday-css-dark">
       <Head />
       <body>
         <header>

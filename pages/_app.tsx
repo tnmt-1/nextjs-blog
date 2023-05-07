@@ -2,9 +2,9 @@ import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../fontawesome/css/all.min.css";
+import "../styles/globals.css";
 import "../styles/holiday.css";
 import "../styles/prism.css";
-import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
