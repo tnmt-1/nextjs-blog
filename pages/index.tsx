@@ -7,7 +7,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Home: NextPage<Props> = ({ blog }) => {
   const listBlockStyle = {
     display: "block",
-    marginBottom: "20px",
+    marginBottom: "30px",
   };
 
   return (
