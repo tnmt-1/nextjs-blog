@@ -100,7 +100,7 @@ export const markdownToHtmlWithToc = async (markdown: string) => {
         const tocWrapper: HtmlElementNode = {
           type: "element",
           tagName: "details",
-          properties: { className: "toc-wapper" },
+          properties: { className: "toc-wrapper" },
           children: [summary, toc],
         };
 
