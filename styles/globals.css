@@ -41,12 +41,6 @@ footer > .copyright {
   margin: 30px 0;
 }
 
-h1:not(:first-child),
-h2:not(:first-child),
-h3:not(:first-child) {
-  margin-top: 50px;
-}
-
 .toc-wrapper {
   margin: 30px 0 50px 0;
 }
@@ -71,6 +65,7 @@ footer {
 }
 
 a {
+  color: #0066cc;
   text-decoration: none;
 }
 
@@ -98,4 +93,10 @@ li {
 
 footer {
   margin-top: auto;
+}
+
+h2:not(.title),
+h3 {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
 }
