@@ -86,5 +86,6 @@ export const post = async (urlPath: string) => {
     body: await markdownToHtmlWithToc(content),
     path: `${siteUrl}/${basePostPath}`,
     tags: data.tags ?? null,
+    description: data.description ?? null,
   };
 };

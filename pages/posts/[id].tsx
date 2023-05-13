@@ -11,7 +11,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const BlogId: NextPage<Props> = ({ blog }) => {
   useTweetEmbed();
 
-  const description = striptags(blog.body).split("。")[0];
+  const description = blog.description ?? striptags(blog.body).split("。")[0];
 
   return (
     <>
