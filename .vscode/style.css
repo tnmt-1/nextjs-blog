@@ -1,0 +1,14 @@
+body {
+  background-color: #fff;
+  color: #000;
+  font-size: 1em;
+}
+
+pre,
+code {
+  color: #000;
+}
+
+pre {
+  background-color: #000;
+}
