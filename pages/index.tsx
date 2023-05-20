@@ -13,12 +13,14 @@ const Home: NextPage<Props> = ({ blog }) => {
   return (
     <>
       {blog.map((blog) => (
-        <Link href={`/posts/${blog.id}`} key={blog.id} style={listBlockStyle}>
+        <div style={listBlockStyle}>
           <small>
             <time>{blog.publishedAt}</time>
           </small>
-          <div>{blog.title}</div>
-        </Link>
+          <Link href={`/posts/${blog.id}`} key={blog.id}>
+            <div>{blog.title}</div>
+          </Link>
+        </div>
       ))}
     </>
   );
