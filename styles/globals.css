@@ -27,7 +27,7 @@ a[target="_blank"]::after {
 
 header > .title a {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 footer > nav {
