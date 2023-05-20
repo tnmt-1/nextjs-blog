@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 import striptags from "striptags";
 import { useTweetEmbed } from "../../components/Twitter/Twitter";
 import { post, posts } from "../../lib/posts";
-import styles from "./[id].module.css";
+import styles from "../../styles/[id].module.css";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

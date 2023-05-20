@@ -5,6 +5,7 @@ body {
     メイリオ, sans-serif;
   font-size: 16px;
   line-height: 1.8;
+  background-color: #fbfbfb;
 }
 
 pre,
@@ -39,12 +40,16 @@ footer > .copyright {
 }
 
 .toc-wrapper {
-  margin: 30px 0 50px 0;
+  margin-bottom: 30px;
 }
 
 /* 目次がないときは非表示にする */
 .toc-wrapper:not(:has(> ul > li)) {
   display: none;
+}
+
+main > article {
+  margin-top: 50px;
 }
 
 .remark-code-title {
@@ -82,7 +87,8 @@ a:visited {
   flex-direction: column;
   min-height: 98vh;
   max-width: 900px;
-  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .container > #__next {

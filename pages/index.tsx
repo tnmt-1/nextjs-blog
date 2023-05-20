@@ -1,19 +1,15 @@
 import { InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
 import { posts } from "../lib/posts";
+import styles from "../styles/index.module.css";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ blog }) => {
-  const listBlockStyle = {
-    display: "block",
-    marginBottom: "30px",
-  };
-
   return (
     <>
       {blog.map((blog) => (
-        <div key={blog.id} style={listBlockStyle}>
+        <div key={blog.id} className={styles.card}>
           <small>
             <time>{blog.publishedAt}</time>
           </small>
