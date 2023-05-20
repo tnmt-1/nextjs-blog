@@ -56,9 +56,12 @@ footer > .copyright {
 }
 
 header,
-main,
-footer {
+main {
   margin: 0 30px;
+}
+
+footer {
+  margin: 50px 30px 0 30px;
 }
 
 a {
