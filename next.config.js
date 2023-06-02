@@ -7,7 +7,6 @@ const nextConfig = {
     experimental: {
         serverComponentsExternalPackages: ["@remark-embedder", "remark-prism"],
     },
-    output: "export",
 };
 
 module.exports = nextConfig;
