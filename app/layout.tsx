@@ -1,11 +1,47 @@
-import { Head, Html, Main, NextScript } from "next/document";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import "../fontawesome/css/all.min.css";
+import "../styles/globals.css";
+import "../styles/prism.css";
 
-export default function Document() {
+const siteName = process.env.NEXT_PUBLIC_SITE_TITLE ?? "";
+const description = "日々の出来事やプログラミング関連について書きます";
+const url = process.env.NEXT_PUBLIC_SITE_URL ?? "";
+
+export const metadata: Metadata = {
+  title: {
+    default: siteName,
+    template: `%s - ${siteName}`,
+  },
+  description,
+  openGraph: {
+    title: siteName,
+    description,
+    url,
+    siteName,
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: siteName,
+    description,
+    site: `@${process.env.NEXT_PUBLIC_TWITTER_ID}`,
+    creator: `@${process.env.NEXT_PUBLIC_TWITTER_ID}`,
+  },
+  alternates: {
+    canonical: url,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Html lang="ja">
-      <Head />
+    <html lang="ja">
       <body>
         <div className="container">
           <header>
@@ -22,7 +58,7 @@ export default function Document() {
               </Link>
             </h2>
           </header>
-          <Main />
+          <main>{children}</main>
           <footer>
             <nav>
               <ul>
@@ -46,8 +82,7 @@ export default function Document() {
             </div>
           </footer>
         </div>
-        <NextScript />
       </body>
-    </Html>
+    </html>
   );
 }

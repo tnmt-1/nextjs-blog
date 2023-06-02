@@ -1,6 +1,12 @@
-import { useEffect } from "react";
+"use client";
 
-export const useTweetEmbed = () => {
+import React, { useEffect } from "react";
+
+export default function TweetEmbed({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   // https://ningensei848.github.io/againstc/blog/2022/02/22/embed-tweet-to-docusaurus
   // https://zenn.dev/catnose99/articles/329d7d61968efb
   useEffect(() => {
@@ -13,4 +19,6 @@ export const useTweetEmbed = () => {
       document.body.removeChild(script);
     };
   }, []);
-};
+
+  return <>{children}</>;
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   HatenaIcon,
   HatenaShareButton,
@@ -15,7 +17,10 @@ type ShareButtonProps = {
   title: string;
 };
 
-export function ShareButtons({ url, title }: ShareButtonProps): JSX.Element {
+export default function ShareButtons({
+  url,
+  title,
+}: ShareButtonProps): JSX.Element {
   return (
     <div className={styles.share}>
       <TwitterShareButton url={url} title={title}>
