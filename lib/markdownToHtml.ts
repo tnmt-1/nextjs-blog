@@ -9,8 +9,8 @@ import { remark } from "remark";
 import remarkBreaks from "remark-breaks";
 import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkGfm from "remark-gfm";
-import remarkRehype from "remark-rehype";
 import remarkPrism from "remark-prism";
+import remarkRehype from "remark-rehype";
 
 /**
  * remarkによるmarkdownの構文変換を行う
