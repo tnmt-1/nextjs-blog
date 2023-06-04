@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
 import { posts } from "../lib/posts";
-import styles from "../styles/index.module.css";
+import styles from "./index.module.css";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

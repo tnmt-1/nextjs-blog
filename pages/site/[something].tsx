@@ -4,7 +4,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import path from "path";
 import { useTweetEmbed } from "../../components/Twitter/Twitter";
 import { markdownToHtml } from "../../lib/markdownToHtml";
-import styles from "../../styles/[something].module.css";
+import styles from "./[something].module.css";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
