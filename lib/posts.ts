@@ -1,8 +1,8 @@
+import { markdownToHtmlWithToc } from "@/lib/markdownToHtml";
 import { format } from "date-fns";
 import fs, { promises } from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { markdownToHtmlWithToc } from "./markdownToHtml";
 
 export const posts = async () => {
   const postsDirectory = path.join(process.cwd(), "posts");
