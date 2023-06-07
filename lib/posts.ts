@@ -9,7 +9,7 @@ export const posts = async () => {
   const fileNames = await promises.readdir(postsDirectory);
   return fileNames
     .filter((fileName) => {
-      return fileName !== ".git";
+      return fileName.endsWith(".md");
     })
     .map((fileName) => {
       const fileContents = fs.readFileSync(
