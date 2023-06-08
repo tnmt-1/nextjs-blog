@@ -1,3 +1,12 @@
+.article {
+  padding-top: 30px;
+}
+
+.article p {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
 .share {
   margin-top: 40px;
   margin-bottom: 20px;

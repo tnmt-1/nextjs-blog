@@ -24,12 +24,13 @@ const BlogId: NextPage<Props> = ({ blog }) => {
         <time>{blog.publishedAt}</time>
       </small>
       <article
+        className={styles.article}
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
       />
       {blog.tags && (
-        <div className={styles.tags}>
+        <section className={styles.tags}>
           {blog.tags.map((tag: string) => {
             return (
               <span key={tag} className={styles.tag}>
@@ -37,11 +38,11 @@ const BlogId: NextPage<Props> = ({ blog }) => {
               </span>
             );
           })}
-        </div>
+        </section>
       )}
-      <div className={styles.share}>
+      <section className={styles.share}>
         <ShareButtons url={blog.path} title={blog.title} />
-      </div>
+      </section>
     </>
   );
 };

@@ -1,0 +1,26 @@
+.footer {
+  color: #fff;
+  background-color: #192a3f;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer > * {
+  max-width: 900px;
+}
+
+.footer > nav {
+  margin: 30px auto;
+  border-bottom: none;
+}
+
+.footer > .copyright {
+  margin: 15px auto;
+  text-align: center;
+}
+
+.footer a,
+.footer a:visited {
+  color: #44b9d6;
+}

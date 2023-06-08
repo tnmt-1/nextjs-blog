@@ -1,3 +1,6 @@
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Main from "@/components/Main/Main";
 import "@/fontawesome/css/all.min.css";
 import "@/styles/globals.css";
 import "@/styles/prism.css";
@@ -33,9 +36,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           url: process.env.NEXT_PUBLIC_SITE_URL,
         }}
       />
-      <main>
-        <Component {...pageProps} />
-      </main>
+      <section className="container">
+        <Header />
+        <Main>
+          <Component {...pageProps} />
+        </Main>
+        <Footer />
+      </section>
     </>
   );
 }

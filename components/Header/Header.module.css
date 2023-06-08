@@ -1,0 +1,32 @@
+.header {
+  background-color: #192a3f;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.header > section {
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header a,
+.header a:visited {
+  color: #44b9d6;
+}
+
+.title {
+  font-size: 1.3rem;
+  border-bottom: none;
+  display: flex;
+}
+
+.title > a {
+  display: flex;
+  align-items: center;
+}
+
+.siteTitle {
+  margin-left: 10px;
+}

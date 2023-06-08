@@ -9,14 +9,14 @@ const Home: NextPage<Props> = ({ blog }) => {
   return (
     <>
       {blog.map((blog) => (
-        <div key={blog.id} className={styles.card}>
+        <section key={blog.id} className={styles.card}>
           <small>
             <time>{blog.publishedAt}</time>
           </small>
           <Link href={`/posts/${blog.id}`}>
-            <div>{blog.title}</div>
+            <label className={styles.title}>{blog.title}</label>
           </Link>
-        </div>
+        </section>
       ))}
     </>
   );

@@ -6,67 +6,13 @@ body {
   font-size: 1.0625rem;
   line-height: 2;
   background-color: #fbfbfb;
+  margin: 0;
 }
 
 pre,
 code {
   font-family: "PlemolJP", Hackgen, Consolas, Monaco, "Andale Mono",
     "Ubuntu Mono", monospace !important;
-}
-
-a[target="_blank"]::after {
-  font-family: "Font Awesome 5 Free";
-  content: " \f35d";
-  font-weight: 900;
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.logo + span {
-  margin-left: 10px;
-}
-
-header > .title a {
-  display: flex;
-  align-items: center;
-}
-
-footer > nav {
-  border-bottom: none;
-}
-
-footer > .copyright {
-  margin: 30px 0;
-}
-
-.toc-wrapper {
-  margin-bottom: 30px;
-}
-
-/* 目次がないときは非表示にする */
-.toc-wrapper:not(:has(> ul > li)) {
-  display: none;
-}
-
-main > article {
-  margin-top: 50px;
-}
-
-.remark-code-title {
-  font-size: 0.9rem;
-  color: #fff;
-  background-color: #2d2d2d;
-  padding: 1em;
-  margin-bottom: -0.5em;
-}
-
-header,
-main {
-  margin: 0 30px;
-}
-
-footer {
-  margin: 50px 30px 0 30px;
 }
 
 a {
@@ -82,20 +28,15 @@ a:visited {
   color: #0066cc;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 98vh;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 10px;
+a[target="_blank"]::after {
+  font-family: "Font Awesome 5 Free";
+  content: " \f35d";
+  font-weight: 900;
+  display: inline-block;
+  margin: 0 5px;
 }
 
-.container > #__next {
-  flex: 1;
-}
-
-main h1 {
+h1 {
   margin: 0;
   padding: 8px 0 0 0;
   font-size: 1.3rem;
@@ -103,16 +44,11 @@ main h1 {
   line-height: 1.5;
 }
 
-h2:not(.title),
+h2,
 h3 {
   font-size: 1.2rem;
   border-bottom: 1px solid #dfdfdf;
   padding: 5px 0;
-}
-
-main p {
-  margin: 0;
-  padding: 0 0 1em 0;
 }
 
 img {
@@ -136,4 +72,32 @@ blockquote {
   background-color: #eee;
   border-left: 3px solid #ddd;
   padding: 10px 15px 10px 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  padding-bottom: 250px;
+  box-sizing: border-box;
+}
+
+.toc-wrapper {
+  margin-bottom: 30px;
+}
+
+/* 目次がないときは非表示にする */
+.toc-wrapper:not(:has(> ul > li)) {
+  display: none;
+}
+
+.remark-code-title {
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #2d2d2d;
+  padding: 1em;
+  margin-bottom: -0.5em;
 }
