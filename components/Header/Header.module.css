@@ -20,6 +20,7 @@
   font-size: 1.3rem;
   border-bottom: none;
   display: flex;
+  margin: 0.83em 0;
 }
 
 .title > a {
