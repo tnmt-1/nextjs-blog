@@ -69,17 +69,19 @@ img {
   max-width: 100%;
 }
 
-table,
+table {
+  border-collapse: collapse;
+}
+
 th,
 td {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 20px;
 }
 
 th {
   font-weight: bold;
-  background-color: #ededed;
+  background-color: #dfdfdf;
 }
 
 blockquote {
@@ -97,6 +99,7 @@ blockquote {
   position: relative;
   padding-bottom: 250px;
   box-sizing: border-box;
+  background-color: #d6d7da;
 }
 
 .toc-wrapper {

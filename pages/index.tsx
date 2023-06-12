@@ -7,18 +7,18 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = ({ blog }) => {
   return (
-    <>
+    <section className={styles.wrapper}>
       {blog.map((blog) => (
-        <section key={blog.id} className={styles.card}>
-          <small>
-            <time>{blog.publishedAt}</time>
-          </small>
-          <Link href={`/posts/${blog.id}`}>
+        <Link href={`/posts/${blog.id}`} key={blog.id} className={styles.card}>
+          <section>
             <label className={styles.title}>{blog.title}</label>
-          </Link>
-        </section>
+            <small>
+              <time>{blog.publishedAt}</time>
+            </small>
+          </section>
+        </Link>
       ))}
-    </>
+    </section>
   );
 };
 

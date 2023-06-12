@@ -14,7 +14,7 @@ const BlogId: NextPage<Props> = ({ blog }) => {
   const description = blog.description ?? striptags(blog.body).split("。")[0];
 
   return (
-    <>
+    <section className={styles.wrapper}>
       <NextSeo
         title={`${blog.title} | ${process.env.NEXT_PUBLIC_SITE_TITLE}`}
         description={description}
@@ -43,7 +43,7 @@ const BlogId: NextPage<Props> = ({ blog }) => {
       <section className={styles.share}>
         <ShareButtons url={blog.path} title={blog.title} />
       </section>
-    </>
+    </section>
   );
 };
 

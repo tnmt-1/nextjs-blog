@@ -11,12 +11,14 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Home: NextPage<Props> = ({ content }) => {
   useTweetEmbed();
   return (
-    <article
-      className={styles.article}
-      dangerouslySetInnerHTML={{
-        __html: `${content}`,
-      }}
-    />
+    <section className={styles.wrapper}>
+      <article
+        className={styles.article}
+        dangerouslySetInnerHTML={{
+          __html: `${content}`,
+        }}
+      />
+    </section>
   );
 };
 
