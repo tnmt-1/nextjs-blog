@@ -16,10 +16,11 @@
   margin-bottom: 30px;
   width: 162px !important;
   height: 138px !important;
-  word-wrap: break-word;
   padding: 10px;
   border-radius: 3px;
   background-color: #eee;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .card > section {

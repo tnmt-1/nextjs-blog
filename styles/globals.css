@@ -71,6 +71,7 @@ img {
 
 table {
   border-collapse: collapse;
+  margin: 1em 0;
 }
 
 th,
@@ -87,7 +88,22 @@ th {
 blockquote {
   background-color: #eee;
   border-left: 3px solid #ddd;
-  padding: 10px 15px 10px 20px;
+  padding-left: 20px;
+  padding-right: 15px;
+}
+
+hr {
+  margin: 1em 0;
+}
+
+p {
+  padding: 1em 0;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+p + p {
+  padding: 0 0 1em 0;
 }
 
 .container {
