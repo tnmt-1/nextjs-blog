@@ -1,0 +1,9 @@
+overrides:
+  - files:
+      - "*.md"
+    options:
+      parser: markdown-nocjsp
+  - files:
+      - "*.mx"
+    options:
+      parser: mdx-nocjsp
