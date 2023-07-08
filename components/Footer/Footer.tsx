@@ -7,13 +7,10 @@ export default function Footer(): JSX.Element {
       <nav>
         <ul>
           <li>
-            <Link href="/site/このサイトについて">このサイトについて</Link>
-          </li>
-          <li>
             <Link href="/site/プライバシーポリシー">プライバシーポリシー</Link>
           </li>
           <li>
-            <Link href="/site/個人情報">個人情報</Link>
+            <Link href="/site/プロフィール">プロフィール</Link>
           </li>
         </ul>
       </nav>
