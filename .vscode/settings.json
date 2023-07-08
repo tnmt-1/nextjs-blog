@@ -1,8 +1,5 @@
 {
-  "markdown.styles": [
-    "styles/globals.css",
-    ".vscode/style.css"
-  ],
+  "markdown.styles": [".vscode/globals.css", ".vscode/style.css"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "prettier.prettierPath": "./node_modules/prettier"
