@@ -5,6 +5,7 @@ body {
     "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
   font-size: 1.0625rem;
   line-height: 2;
+  color: #eee;
   background-color: #333333;
   margin: 0;
 }
@@ -25,7 +26,7 @@ a:hover {
 }
 
 a:visited {
-  color: #0066cc;
+  color: #44b9d6;
 }
 
 a[target="_blank"]::after {
