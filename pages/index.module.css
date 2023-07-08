@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: wrap;
   gap: 10px;
-  justify-content: center;
   font-size: 0.9rem;
 }
 
@@ -14,7 +13,7 @@
 .card {
   display: block;
   margin-bottom: 10px;
-  width: 132px !important;
+  width: 147px !important;
   height: 138px !important;
   padding: 10px;
   border-radius: 3px;
